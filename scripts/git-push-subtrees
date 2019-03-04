@@ -1,0 +1,6 @@
+#!/bin/bash
+
+git subtree push --prefix=plugins/check-colours-buildkite-plugin/ check-colours-buildkite-plugin master
+
+# References:
+# - https://www.atlassian.com/blog/git/alternatives-to-git-submodule-git-subtree

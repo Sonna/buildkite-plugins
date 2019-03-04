@@ -1,0 +1,7 @@
+#!/bin/bash
+
+git fetch check-colours-buildkite-plugin
+git subtree pull --prefix=plugins/check-colours-buildkite-plugin/ check-colours-buildkite-plugin master --squash
+
+# References:
+# - https://www.atlassian.com/blog/git/alternatives-to-git-submodule-git-subtree
