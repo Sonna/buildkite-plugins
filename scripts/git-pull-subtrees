@@ -1,7 +1,16 @@
 #!/bin/bash
 
-git fetch check-colours-buildkite-plugin
-git subtree pull --prefix=plugins/check-colours-buildkite-plugin/ check-colours-buildkite-plugin master --squash
+declare -a repos=(
+    "eslint-buildkite-plugin"
+    "check-colours-buildkite-plugin"
+)
+
+for i in "${repos[@]}"
+do
+   echo "------ $i"
+   git fetch "$i"
+   git subtree pull --prefix=plugins/$i/ "$i" master --squash
+done
 
 # References:
 # - https://www.atlassian.com/blog/git/alternatives-to-git-submodule-git-subtree

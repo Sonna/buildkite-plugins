@@ -1,6 +1,15 @@
 #!/bin/bash
 
-git subtree push --prefix=plugins/check-colours-buildkite-plugin/ check-colours-buildkite-plugin master
+declare -a repos=(
+    "eslint-buildkite-plugin"
+    "check-colours-buildkite-plugin"
+)
+
+for i in "${repos[@]}"
+do
+   echo "------ $i"
+   git subtree push --prefix=plugins/$i/ "$i" master
+done
 
 # References:
 # - https://www.atlassian.com/blog/git/alternatives-to-git-submodule-git-subtree
