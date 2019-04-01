@@ -1,0 +1,13 @@
+#!/bin/bash
+
+declare -a repos=(
+    "eslint-buildkite-plugin"
+    "check-colours-buildkite-plugin"
+)
+
+for i in "${repos[@]}"
+do
+   echo "------ $i"
+   git remote add -f "$i" "git@github.com:Sonna/$i.git"
+   git subtree add --prefix plugins/$i/ "$i" master --squash
+done
